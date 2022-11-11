@@ -1,4 +1,6 @@
 import os
+from pymongo import MongoClient
+
 
 MONGO_URL = os.environ.get("mongodb://localhost:27017")
 SECRET_KEY = os.environ.get("7799Reis")
@@ -9,3 +11,6 @@ EyMmZkNTQ4NTA5M2E4NTY3NDk0ZDkxNGNm"""
 )
 ELASTIC_USERNAME = os.environ.get("elastic")
 ELASTIC_PASSWORD = os.environ.get("wxdXoUF9SA8ns30bW9pxrBI8")
+
+client = MongoClient(MONGO_URL)
+db = client.Teste_Python
