@@ -109,3 +109,10 @@ def create():
         else:
             return redirect(url_for("user.login"))
     return render_template("views_users/login.html")
+
+
+@user.route("/logout", methods=["GET"])
+def logout():
+    session.pop("username", None)
+    flash("Logout Efetuado!")
+    return render_template("views_users/login.html", type_alert="success")
