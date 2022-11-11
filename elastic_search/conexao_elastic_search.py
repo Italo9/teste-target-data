@@ -14,3 +14,7 @@ es = Elasticsearch(
 )
 
 print(es.info())
+
+collection_empresas = db.Empresas
+collection_socios = db.Socios
+collection_estabelecimentos = db.Estabelecimentos
