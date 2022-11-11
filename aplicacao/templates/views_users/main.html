@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+    <!--Buttons-->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-lg-12 col-xl-12 col-xxl-12 mx-auto">
+                    <a class="btn btn-secondary m-3 p-3 btn-layout col" href="{{ url_for('views.list_empresas') }}">Todos Dados Empresas</a>
+                    <a class="btn btn-secondary m-3 p-3 btn-layout col" href="{{ url_for('views.list_socios') }}">Todos Dados Sócios</a>
+                    <a class="btn btn-secondary m-3 p-3 btn-layout col" href="{{ url_for('views.list_estabelecimentos') }}">Todos Dados Estabelecimentos</a>
+            </div>
+        </div>
+    </div>
+
+    <!--Title of page-->
+    <div class="pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Teste Flask</h1>
+    </div>
+
+    <!--Challenge-->
+    <div>
+        <!--First Challenge-->
+        <h2 class="h4">1° Desafio:</h2>
+        <br>
+        <ul class="h5">
+            <li>O desafio proposto é utilizar as bases governamentais da receita federal que estão disponíveis neste link <a href="https://www.gov.br/receitafederal/pt-br/assuntos/orientacao-tributaria/cadastros/consultas/dados-publicos-cnpj" target="_blank">https://www.gov.br/receitafederal/pt-br/assuntos/orientacao-tributaria/cadastros/consultas/dados-publicos-cnpj</a> que consiste em baixar as bases “Dados Abertos CNPJ EMPRESA”, “Dados Abertos CNPJ ESTABELECIMENTOS” e “Dados Abertos CNPJ SÓCIOS”, existem arquivos complementares que podem ser utilizados para colocar as legendas e esse outro link é a legenda de campos de cada arquivos <a href="https://www.gov.br/receitafederal/pt-br/assuntos/orientacao-tributaria/cadastros/consultas/arquivos/leiaute-dos-arquivos.pdf" target="_blank">https://www.gov.br/receitafederal/pt-br/assuntos/orientacao-tributaria/cadastros/consultas/arquivos/leiaute-dos-arquivos.pdf</a></li>
+            <br>
+            <li>Para efetuar o processamento a ideia é utilizar python puro e suas ferramentas nativas para processar com exceção do PyMongo que deverá ser utilizado como Banco de Processamento e Data Warehouse. Esse processamento precisa estar disponível em seu MongoDB e no seu ElasticSearch.</li>
+            <br>
+            <li>Quantidade de CNPJs que precisam conter em sua base de dados que foram extraídos e processados é de 100.000 Registros. </li>
+            <br>
+        </ul>
+
+        <!--Second Challenge-->
+        <h2 class="h4">2° Desafio:</h2>
+        <br>
+        <ul class="h5">
+            <li>O Segundo desafio consiste em criar uma aplicação simples em Python e Flask para o cliente efetuar o login e consultar esses dados pelos seguintes filtros, “CNPJ”, “Razão Social”, “Endereços” e “Telefones”. </li>
+            <br>
+            <li>Como base de dados deverá ser utilizado o MongoDB para guardar os dados de login e cadastro e juntamente um registro de pesquisas feitas no sistema e os dados destas pesquisas devem vir do ElasticSearch.</li>
+            <br>
+        </ul>
+    </div>
+{% endblock %}

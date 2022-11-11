@@ -1,6 +1,7 @@
+import os
+
 from elasticsearch import Elasticsearch
 from pymongo import MongoClient
-import os
 
 MONGO_URL = os.environ.get("mongodb://localhost:27017")
 
