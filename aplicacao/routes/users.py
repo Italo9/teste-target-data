@@ -64,7 +64,7 @@ def login():
                     "views_users/login.html", type_alert="danger"
                 )
 
-        return redirect(url_for("user.pageCreate"))
+        return redirect(url_for("user.auxiliaryPageCreate"))
 
     return render_template("views_users/login.html")
 
@@ -109,6 +109,14 @@ def create():
         else:
             return redirect(url_for("user.login"))
     return render_template("views_users/login.html")
+
+
+@user.route("/create-users")
+def auxiliaryPageCreate():
+    if "username" in session:
+        return render_template("views_users/main.html")
+    else:
+        return render_template("views_users/create.html")
 
 
 @user.route("/logout", methods=["GET"])
