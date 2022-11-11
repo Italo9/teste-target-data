@@ -18,3 +18,23 @@ print(es.info())
 collection_empresas = db.Empresas
 collection_socios = db.Socios
 collection_estabelecimentos = db.Estabelecimentos
+
+lista_empresas = collection_empresas.find({})
+lista_socios = collection_socios.find({})
+lista_estabele = collection_estabelecimentos.find({})
+
+lista_todos_os_dados_das_empresas = []
+lista_todos_os_dados_dos_socios = []
+lista_todos_os_dados_dos_estabele = []
+
+for index in lista_empresas:
+    del index["_id"]
+    lista_todos_os_dados_das_empresas += [index]
+
+for index in lista_socios:
+    del index["_id"]
+    lista_todos_os_dados_dos_socios += [index]
+
+for index in lista_estabele:
+    del index["_id"]
+    lista_todos_os_dados_dos_estabele += [index]
