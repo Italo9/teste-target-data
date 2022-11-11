@@ -8,7 +8,7 @@ from flask import (
     flash,
 )
 from settings import db
-from werkzeug.security import check_password_hash
+from werkzeug.security import check_password_hash, generate_password_hash
 
 user = Blueprint("user", __name__)
 
@@ -66,4 +66,46 @@ def login():
 
         return redirect(url_for("user.pageCreate"))
 
+    return render_template("views_users/login.html")
+
+
+@user.route("/create", methods=["GET", "POST"])
+def create():
+    if "username" in session:
+        return redirect(url_for("user.main"))
+    elif request.method == "POST":
+        username = request.form.get("user")
+        password = request.form.get("password")
+        if (username != "") and (password == ""):
+            flash("Por favor, preencha todos os campos")
+            return render_template(
+                "views_users/create.html", type_alert="danger"
+            )
+        elif (username == "") and (password != ""):
+            flash("Por favor, preencha todos os campos")
+            return render_template(
+                "views_users/create.html", type_alert="danger"
+            )
+        elif (username != "") and (password != ""):
+
+            userCollection = db.users
+
+            data_user = {
+                "name": username,
+                "password": generate_password_hash(password),
+            }
+            userExists = userCollection.find_one({"name": username})
+            if userExists:
+                flash(f"Usuario {username} já existe", "error")
+                return render_template(
+                    "views_users/login.html", type_alert="warning"
+                )
+            else:
+                userCollection.insert_one(data_user)
+                flash(f"Usuario {username} criado com sucesso!")
+                return render_template(
+                    "views_users/login.html", type_alert="success"
+                )
+        else:
+            return redirect(url_for("user.login"))
     return render_template("views_users/login.html")
