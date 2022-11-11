@@ -10,7 +10,7 @@ db = client.Teste_Python
 es = Elasticsearch(
     cloud_id="""My_deployment:dXMtY2VudHJhbDEuZ2NwLmNsb3VkLmVzLmlvJGJiY2E4ODdhNmU4MjQzY2E4ZTIz
     ZTNmYzUwMjUzMzQ0JDllYzM2MzEyMmZkNTQ4NTA5M2E4NTY3NDk0ZDkxNGNm""",
-    http_auth=("elastic", "wxdXoUF9SA8ns30bW9pxrBI8"),
+    basic_auth=("elastic", "wxdXoUF9SA8ns30bW9pxrBI8"),
 )
 
 print(es.info())
@@ -38,3 +38,15 @@ for index in lista_socios:
 for index in lista_estabele:
     del index["_id"]
     lista_todos_os_dados_dos_estabele += [index]
+
+for i, data in enumerate(lista_todos_os_dados_das_empresas):
+    result = es.index(index="empresas", id=i + 1, document=data)
+print("Status da inserção:", result)
+
+for i, data in enumerate(lista_todos_os_dados_dos_socios):
+    result = es.index(index="socios", id=i + 1, document=data)
+print("Status da inserção:", result)
+
+for i, data in enumerate(lista_todos_os_dados_dos_estabele):
+    result = es.index(index="estabelecimentos", id=i + 1, document=data)
+print("Status da inserção:", result)
