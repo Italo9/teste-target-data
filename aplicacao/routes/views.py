@@ -5,6 +5,8 @@ from flask.helpers import url_for
 from settings import (
     list_keys_empresas,
     list_all_dados_empresas,
+    list_keys_socios,
+    list_all_dados_socios,
 )
 
 views = Blueprint("views", __name__)
@@ -36,5 +38,27 @@ def list_empresas():
             pagination=pagination,
         )
     else:
+        return redirect(url_for("user.login"))
 
+
+@views.route("/list-socios")
+def list_socios():
+    if "username" in session:
+        page, per_page, offset = get_page_args(
+            page_parameter="page", per_page_parameter="per_page"
+        )
+        keys_socios = list_keys_socios
+        total = int(len(list_all_dados_socios))
+        pagination_socios = get_data(list_all_dados_socios, offset, per_page)
+        pagination = Pagination(
+            page=page, per_page=per_page, total=total, record_name="socios"
+        )
+        return render_template(
+            "views/list_socios.html",
+            head=keys_socios,
+            title="Dados Sócios",
+            dados=pagination_socios,
+            pagination=pagination,
+        )
+    else:
         return redirect(url_for("user.login"))
