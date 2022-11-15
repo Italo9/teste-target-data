@@ -7,6 +7,8 @@ from settings import (
     list_all_dados_empresas,
     list_keys_socios,
     list_all_dados_socios,
+    list_keys_estabelecimentos,
+    list_all_dados_estabelecimentos,
 )
 
 views = Blueprint("views", __name__)
@@ -58,6 +60,34 @@ def list_socios():
             head=keys_socios,
             title="Dados Sócios",
             dados=pagination_socios,
+            pagination=pagination,
+        )
+    else:
+        return redirect(url_for("user.login"))
+
+
+@views.route("/list-estabelecimentos")
+def list_estabelecimentos():
+    if "username" in session:
+        page, per_page, offset = get_page_args(
+            page_parameter="page", per_page_parameter="per_page"
+        )
+        keys_estabelecimentos = list_keys_estabelecimentos
+        total = int(len(list_all_dados_estabelecimentos))
+        pagination_estabelecimentos = get_data(
+            list_all_dados_estabelecimentos, offset, per_page
+        )
+        pagination = Pagination(
+            page=page,
+            per_page=per_page,
+            total=total,
+            record_name="estabelecimentos",
+        )
+        return render_template(
+            "views/list_estabelecimentos.html",
+            head=keys_estabelecimentos,
+            title="Dados Estabelecimentos",
+            dados=pagination_estabelecimentos,
             pagination=pagination,
         )
     else:
