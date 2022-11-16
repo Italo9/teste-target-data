@@ -11,7 +11,6 @@ from werkzeug.security import check_password_hash, generate_password_hash
 from settings import db
 
 user = Blueprint("user", __name__)
-user.secre
 
 
 @user.route("/")
