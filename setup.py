@@ -1,0 +1,14 @@
+from setuptools import setup
+
+setup(
+    name="target",
+    description="Projeto TargetData",
+    install_requires=[
+        "Flask==2.1.3",
+        "ElasticSearch==8.3.1",
+        "pymongo==4.2.0",
+        "Werkzeug==2.2.0",
+        "flask-paginate==2022.1.8",
+        "flake8==4.0.1",
+    ],
+)

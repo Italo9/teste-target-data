@@ -1,2 +1,8 @@
 extrair_dados/
 *.csv
+
+.env
+.venv
+env/
+venv/
+ENV/

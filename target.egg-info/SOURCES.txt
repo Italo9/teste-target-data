@@ -1,0 +1,17 @@
+README.md
+pyproject.toml
+setup.py
+target.egg-info/PKG-INFO
+target.egg-info/SOURCES.txt
+target.egg-info/dependency_links.txt
+target.egg-info/requires.txt
+target.egg-info/top_level.txt
+target/aplicacao/__init__.py
+target/aplicacao/aplicacao.py
+target/aplicacao/settings.py
+target/aplicacao/routes/users.py
+target/aplicacao/routes/views.py
+target/elastic_search/conexao_elastic_search.py
+target/extrair_dados/__init__.py
+target/extrair_dados/extrair_dados_csv.py
+target/extrair_dados/tempCodeRunnerFile.py

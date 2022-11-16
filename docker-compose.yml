@@ -1,0 +1,34 @@
+version: "3"
+
+services:
+  target:
+    build: .
+    image: target_image
+    volumes:
+      - ./:/app
+    container_name: target
+    tty: true # docker run -t
+    stdin_open: true # docker run -i
+    command: bash
+    restart: unless-stopped
+    depends_on:
+      - mongodb
+    environment:
+      - DB_HOST=mongodb
+    networks:
+      - target_net
+
+  mongodb:
+    image: mongo:4.4.14
+    container_name: target_db
+    volumes:
+      - ./:/app
+    restart: unless-stopped
+    ports:
+      - 27017:27017
+    networks:
+      - target_net
+
+networks:
+  target_net:
+    driver: bridge
