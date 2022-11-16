@@ -23,7 +23,7 @@ Como base de dados deverá ser utilizado o MongoDB para guardar os dados de logi
 ## Objetivos
 
 - Exercitar os conhecimentos iniciais obtidos na Trybe no módulo de ciência da computação no que se refere a linguagem python; 
-- Treinar a interpretação e utilização de novas stacks derivadas da modelagem de projetos de terceiros e consecutivamente suas sintaxes;
+- Treinar a interpretação e utilização de novas stacks derivadas da modelagem de projetos de terceiros e consecutivamente a conceituação de suas sintaxes;
 - Realizar pesquisas imersivas nas documentações das skills requeridas e supracitadas com objetivo de resolver as adversidades;
 - Aplicar e praticar a habilidade de análise e/ou leitura de código;
 - Observar características e comportamentos dos frameworks das novas stacks para identificar quais deles divergem e/ou convergem para com os comportamentos e caracteristicas das minhas linguagens de programação primárias (JavaScript e TypeScript);
