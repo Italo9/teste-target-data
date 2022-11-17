@@ -15,11 +15,14 @@ services:
       - mongodb
     environment:
       - DB_HOST=mongodb
+    ports:
+      - 5000:5000  
     networks:
       - target_net
 
   mongodb:
     image: mongo:4.4.14
+    command: --serviceExecutor adaptive
     container_name: target_db
     volumes:
       - ./:/app
