@@ -63,7 +63,6 @@ python3 -m pip install -r dev-requirements.txt
   Com o seu ambiente virtual ativo, as dependências serão instaladas neste ambiente.
   Quando precisar desativar o ambiente virtual, execute o comando "deactivate". Lembre-se de ativar novamente quando voltar a trabalhar no projeto.
 
-  O arquivo `dev-requirements.txt` contém todas as dependências que serão utilizadas no projeto, ele está agindo como se fosse um `package.json` de um projeto `Node.js`.
   
  
 ## Melhorias Futuras
