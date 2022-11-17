@@ -10,5 +10,9 @@ app.config.from_object(config_object)
 
 app.register_blueprint(user)
 app.register_blueprint(views)
-app.debug = True
-app.run()
+
+
+if __name__ == "__main__":
+    app.secret_key = "XABLAU"
+    app.debug = True
+    app.run()
