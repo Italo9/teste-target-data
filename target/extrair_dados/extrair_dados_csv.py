@@ -87,7 +87,7 @@ with open(
             break
 
 with open(
-    "target/extrair_dados/estabele.csv", encoding="utf-8"
+    "target/extrair_dados/estabele.csv", encoding="ISO-8859-1"
 ) as db:
     for index, line in enumerate(db):
         data = {}
@@ -105,7 +105,7 @@ with open(
             break
 
 with open(
-    "target/extrair_dados/empresas.csv", encoding="utf-8"
+    "target/extrair_dados/empresas.csv", encoding="ISO-8859-1"
 ) as db:
     for index, line in enumerate(db):
         data = {}
