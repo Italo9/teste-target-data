@@ -69,25 +69,7 @@ lista_estabelecimentos_keys = [
 limit = 100001
 
 with open(
-    "/home/italo/vaga-full-stack/teste-target-data/target/extrair_dados/empresas.csv",
-) as db:
-    for index, line in enumerate(db):
-        data = {}
-        line = line.replace(";", ",").replace("\n", "").replace('"', "")
-        lista_line = line.split(",")
-
-        for i in range(0, int(len(lista_empresas_keys))):
-            value = lista_line[i]
-            key = lista_empresas_keys[i]
-            data[key] = value
-
-        collection_empresas.insert_one(data)
-
-        if index == limit:
-            break
-
-with open(
-    "/home/italo/vaga-full-stack/teste-target-data/target/extrair_dados/socios.csv",
+    "target/extrair_dados/socios.csv", encoding="utf-8"
 ) as db:
     for index, line in enumerate(db):
         data = {}
@@ -105,7 +87,7 @@ with open(
             break
 
 with open(
-    "/home/italo/vaga-full-stack/teste-target-data/target/extrair_dados/estabele.csv",
+    "target/extrair_dados/estabele.csv", encoding="utf-8"
 ) as db:
     for index, line in enumerate(db):
         data = {}
@@ -118,6 +100,24 @@ with open(
             data[key] = value
 
         collection_estabelecimentos.insert_one(data)
+
+        if index == limit:
+            break
+
+with open(
+    "target/extrair_dados/empresas.csv", encoding="utf-8"
+) as db:
+    for index, line in enumerate(db):
+        data = {}
+        line = line.replace(";", ",").replace("\n", "").replace('"', "")
+        lista_line = line.split(",")
+
+        for i in range(0, int(len(lista_empresas_keys))):
+            value = lista_line[i]
+            key = lista_empresas_keys[i]
+            data[key] = value
+
+        collection_empresas.insert_one(data)
 
         if index == limit:
             break
