@@ -6,7 +6,6 @@ services:
     volumes:
       - .:/app
     container_name: target
-    command: python -u /app/target/aplicacao/aplicacao.py
     restart: on-failure
     depends_on:
       - mongodb
