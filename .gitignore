@@ -1,5 +1,6 @@
-extrair_dados/
-*.csv
+/target/extrair_dados/empresas.csv
+/target/extrair_dados/estabele.csv
+/target/extrair_dados/socios.csv
 
 .env
 .venv

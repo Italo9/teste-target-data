@@ -1,37 +1,25 @@
 version: "3"
 
 services:
-  target:
+  web:
     build: .
-    image: target_image
     volumes:
-      - ./:/app
+      - .:/app
     container_name: target
-    tty: true # docker run -t
-    stdin_open: true # docker run -i
-    command: bash
-    restart: unless-stopped
+    command: python -u /app/target/aplicacao/aplicacao.py
+    restart: on-failure
     depends_on:
       - mongodb
-    environment:
-      - DB_HOST=mongodb
     ports:
       - 5000:5000  
-    networks:
-      - target_net
+  
 
   mongodb:
     image: mongo:4.4.14
-    command: --serviceExecutor adaptive
     container_name: target_db
     volumes:
       - ./:/app
     restart: unless-stopped
     ports:
       - 27017:27017
-    networks:
-      - target_net
-
-networks:
-  target_net:
-    driver: bridge
+    

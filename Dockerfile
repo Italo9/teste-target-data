@@ -1,12 +1,10 @@
 FROM python:3.8.13
 
+ADD . /app
 WORKDIR /app
 COPY . /app
 
 RUN python3 -m pip install --upgrade pip
 RUN pip install -r dev-requirements.txt
 
-EXPOSE 5000
-CMD ["target/extrair_dados/extrair_dados_csv.py"]
-ENTRYPOINT ["flask", "run"]
-
+CMD flask run --host=0.0.0.0
