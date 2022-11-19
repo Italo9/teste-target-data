@@ -18,6 +18,11 @@ services:
     container_name: target_db
     volumes:
       - ./:/app
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: admin
+      MONGO_INITDB_DATABASE: db
+      MONGO_INITDB_COLLECTION: board
     restart: unless-stopped
     ports:
       - 27017:27017
