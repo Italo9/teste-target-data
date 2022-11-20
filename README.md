@@ -80,7 +80,7 @@ Aqui são apresentadas possíveis melhorias que ainda não foram implementadas n
 - Implementar testes E2E;
 - Aprimorar a estruturação do back end;
 - Aplicar conceitos SOLID na apliação;
-- Reestruturar a aplicação para que a mesma start via comando no terminal;
+- Reestruturar a aplicação para que a mesma seja executada via comando no terminal;
 - Implementar ao Readme por meio de linguagem não verbal um gif da aplicação; 
 
 ## Referências Utilizadas
