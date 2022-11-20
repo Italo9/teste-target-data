@@ -83,7 +83,8 @@ Aqui são apresentadas possíveis melhorias que ainda não foram implementadas n
 - Aprimorar a estruturação do back end;
 - Aplicar conceitos SOLID na apliação;
 - Reestruturar a aplicação para que a mesma seja executada via comando no terminal;
-- Implementar ao Readme por meio de linguagem não verbal um gif da aplicação; 
+- Implementar ao Readme por meio de linguagem não verbal um gif da aplicação;
+- Retificar estrutura para exercer vigência e conformidade com a arquitetura dinsponível no tutorial do [flask](https://flask.palletsprojects.com/en/2.2.x/tutorial/)  
 
 ## Referências Utilizadas
 
