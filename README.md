@@ -63,15 +63,31 @@ Como base de dados deverá ser utilizado o MongoDB para guardar os dados de logi
 
  Com o seu ambiente virtual ativo, as dependências serão instaladas neste ambiente.
  Quando precisar desativar o ambiente virtual, execute o comando "deactivate". Lembre-se de ativar novamente quando voltar a trabalhar no projeto.
+ 
+ **Você utilizará o MongoDB Community Edition, escolha a instalação especifica para a sua distribuição Linux deste [link](https://www.mongodb.com/docs/manual/administration/install-on-linux/).**
+ 
+ **Caso você esteja utilizando MacOS, siga as instruções deste [link](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-os-x/).**
+ 
+ **Ou ainda, no Windows, siga as instruções deste [link](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-windows/).**
 
- 6. **Usar o comando na raiz do projeto**
+ 6. **Usar o comando na raiz do projeto para criar o banco e a coleção junto com os documentos inseridos**
  ```bash
- python3 target/extrair_dados/extrair_dados_csv.py && python3 target/elastic_search/conexao_elastic_search.py && python3 target/aplicacao/aplicacao.py 
+ python3 target/extrair_dados/extrair_dados_csv.py
   ```
+ 7. **Usar o comando na raiz do projeto para criar a conexão com o elastic search**
+ ```bash
+ python3 target/elastic_search/conexao_elastic_search.py 
+  ```
+ 8. **Usar o comando na raiz do projeto para executar a aplicação**
+ ```bash
+  python3 target/aplicacao/aplicacao.py
+   ```
   - Acesse http://127.0.0.1:5000
   
-### Com docker:
--  (EM CONSTRUÇÃO)
+### Com docker: (EM CONSTRUÇÃO)
+  ```bash
+  docker-compose up -d 
+   ``` 
  
 ## Melhorias Futuras
 
