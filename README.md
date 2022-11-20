@@ -34,7 +34,10 @@ Como base de dados deverá ser utilizado o MongoDB para guardar os dados de logi
 ## Como usar
  1. **Clonar o repositório**
   
-  - Use o comando:`git clone git@github.com:Italo9/teste-target-data.git`
+  - Use o comando:
+  ```bash
+  git clone git@github.com:Italo9/teste-target-data.git
+  ```
   - Entre na pasta do repositório que você acabou de clonar:
     - `cd teste-target-data`
   
@@ -61,11 +64,10 @@ Como base de dados deverá ser utilizado o MongoDB para guardar os dados de logi
  Com o seu ambiente virtual ativo, as dependências serão instaladas neste ambiente.
  Quando precisar desativar o ambiente virtual, execute o comando "deactivate". Lembre-se de ativar novamente quando voltar a trabalhar no projeto.
 
- 6. **Acessar o caminho `target/extrair_dados/extrair_dados_csv.py`**
-  - Use o comando: Ctrl+Alt+N para startar, ou clique no canto superior direito do seu vscode em: Run Code
-  
- 7. **Acessar o caminho `target/aplicacao/aplicacao.py`**
-  - Use o comando: Ctrl+Alt+N para startar, ou clique no canto superior direito do seu vscode em: Run Code
+ 6. **Usar o comando**
+ ```bash
+ python3 target/extrair_dados/extrair_dados_csv.py && python3 target/elastic_search/conexao_elastic_search.py && python3 target/aplicacao/aplicacao.py 
+  ```
   - Acesse http://127.0.0.1:5000
   
 ### Com docker:
