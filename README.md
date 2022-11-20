@@ -27,43 +27,51 @@ Como base de dados deverá ser utilizado o MongoDB para guardar os dados de logi
 - Realizar pesquisas imersivas nas documentações das skills requeridas e supracitadas com objetivo de resolver as adversidades encontradas no desenvolvimento;
 - Aplicar e praticar a habilidade de análise e/ou leitura de código;
 - Observar características e comportamentos dos frameworks das novas stacks para identificar quais deles divergem e/ou convergem para com os comportamentos e caracteristicas das minhas linguagens de programação primárias (JavaScript e TypeScript);
-- Aplicar os conhecimentos do banco de dados não relacional MongoDB;  
+- Aplicar os conhecimentos do banco de dados não relacional MongoDB;
+- Realizar a manipulação de arquivos;
 
 
 ## Como usar
-1. Clone o repositório
-
-  - Use o comando: `git clone git@github.com:Italo9/teste-target-data.git`
+ 1. **Clonar o repositório**
+  
+  - Use o comando:
+  ```bash
+  git clone git@github.com:Italo9/teste-target-data.git
+  ```
   - Entre na pasta do repositório que você acabou de clonar:
     - `cd teste-target-data`
+  
+ 2. **Baixar os arquivos .csv e colocá-los no caminho `target/extrair_dados`** [baixar aqui](https://drive.google.com/drive/folders/1gNR9gBZD91umXB1RPJfs9i7VurAJcYwU?usp=share_link)
 
+ 3. **Criar o ambiente virtual**
+
+  ```bash
+  python3 -m venv .venv
+  ```
+
+ 4. **Ativar o ambiente virtual**
+
+  ```bash
+  source .venv/bin/activate
+  ```
+
+ 5. **Instalar as dependências no ambiente virtual**
+
+  ```bash
+  python3 -m pip install -r dev-requirements.txt
+  ```
+
+ Com o seu ambiente virtual ativo, as dependências serão instaladas neste ambiente.
+ Quando precisar desativar o ambiente virtual, execute o comando "deactivate". Lembre-se de ativar novamente quando voltar a trabalhar no projeto.
+
+ 6. **Usar o comando na raiz do projeto**
+ ```bash
+ python3 target/extrair_dados/extrair_dados_csv.py && python3 target/elastic_search/conexao_elastic_search.py && python3 target/aplicacao/aplicacao.py 
+  ```
+  - Acesse http://127.0.0.1:5000
+  
 ### Com docker:
 -  (EM CONSTRUÇÃO)
-### Sem docker:
-  O Python oferece um recurso chamado de ambiente virtual, onde permite sua máquina rodar sem conflitos, diferentes tipos de projetos com diferentes versões de bibliotecas.
-
-  1. **criar o ambiente virtual**
-
-  ```bash
-python3 -m venv .venv
-  ```
-
-  2. **ativar o ambiente virtual**
-
-  ```bash
-source .venv/bin/activate
-  ```
-
-  3. **instalar as dependências no ambiente virtual**
-
-  ```bash
-python3 -m pip install -r dev-requirements.txt
-  ```
-
-  Com o seu ambiente virtual ativo, as dependências serão instaladas neste ambiente.
-  Quando precisar desativar o ambiente virtual, execute o comando "deactivate". Lembre-se de ativar novamente quando voltar a trabalhar no projeto.
-
-  
  
 ## Melhorias Futuras
 
@@ -74,6 +82,7 @@ Aqui são apresentadas possíveis melhorias que ainda não foram implementadas n
 - Implementar testes E2E;
 - Aprimorar a estruturação do back end;
 - Aplicar conceitos SOLID na apliação;
+- Reestruturar a aplicação para que a mesma seja executada via comando no terminal;
 - Implementar ao Readme por meio de linguagem não verbal um gif da aplicação; 
 
 ## Referências Utilizadas
@@ -85,3 +94,4 @@ Além da documentação das técnologias previamente cidatas, também foram util
 - [The Ultimate FastAPI Tutorial](https://christophergs.com/tutorials/ultimate-fastapi-tutorial-pt-1-hello-world/)
 - [Github](https://github.com/rafamaga)
 - [Flask Tutorial #5 - Sessions](https://www.youtube.com/watch?v=iIhAfX4iek0&t=376s)
+- [Full-Text Search with Auto Complete - Python Flask & ElasticSearch](https://www.youtube.com/watch?v=-KjE1JmFVNY)
