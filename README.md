@@ -64,7 +64,7 @@ Como base de dados deverá ser utilizado o MongoDB para guardar os dados de logi
  Com o seu ambiente virtual ativo, as dependências serão instaladas neste ambiente.
  Quando precisar desativar o ambiente virtual, execute o comando "deactivate". Lembre-se de ativar novamente quando voltar a trabalhar no projeto.
 
- 6. **Usar o comando**
+ 6. **Usar o comando na raiz do projeto**
  ```bash
  python3 target/extrair_dados/extrair_dados_csv.py && python3 target/elastic_search/conexao_elastic_search.py && python3 target/aplicacao/aplicacao.py 
   ```
