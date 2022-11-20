@@ -7,4 +7,4 @@ COPY . /app
 RUN python3 -m pip install --upgrade pip
 RUN pip install -r dev-requirements.txt
 
-CMD python -u target/extrair_dados/extrair_dados_csv.py && flask run --host=0.0.0.0
+CMD python3 target/extrair_dados/extrair_dados_csv.py && python3 target/aplicacao/aplicacao.py 
