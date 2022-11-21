@@ -3,33 +3,33 @@ version: "3"
 services:
   web:
     build: .
+    image: target_data
     volumes:
-      - .:/app
-    environment:
-      - FLASK_APP=target/aplicacao/aplicacao.py
-      - FLASK_ENV=development
-      - TEMPLATES_AUTO_RELOAD=True
-      - PYTHONUNBUFFERED=1
-      - APPLY_TO_ALL=True
+      - ./:/app
     container_name: target
-    restart: on-failure
+    tty: true # docker run -t
+    stdin_open: true # docker run -i
+    command: bash
+    restart: unless-stopped
     depends_on:
       - mongodb
+    environment:
+      -  DB_HOST=mongodb
     ports:
-      - 5000:5000  
-  
+      - 5000:5000
+    networks:
+      - target_data_net 
 
   mongodb:
     image: mongo:4.4.14
-    container_name: target_db
+    container_name: mongodb
     volumes:
       - ./:/app
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: admin
-      MONGO_INITDB_DATABASE: db
-      MONGO_INITDB_COLLECTION: board
     restart: unless-stopped
     ports:
       - 27017:27017
-    
+    networks:
+      - target_data_net 
+networks:
+  target_data_net:
+    driver: bridge
