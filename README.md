@@ -2,7 +2,7 @@
 
 # Projeto proposto como desafio técnico 
 
-O requerido projeto trata-se de um site feito em flask utilizando o Elasticsearch, como mecanismo de pesquisa (derivado da biblioteca Lucene), MongoDB como banco de dados não relacional, utilizando dados abertos da receita federal. Concerne em uma modelagem organizada em tabelas que expões informaçoes de empresas, estabelecimento e seus respectivos sócios.
+O requerido projeto trata-se de um site feito em flask que utiliza Elasticsearch, como mecanismo de pesquisa (derivado da biblioteca Lucene), MongoDB como banco de dados não relacional e os dados abertos da receita federal. Concerne em uma modelagem organizada em tabelas que expões informaçoes de empresas, estabelecimento e seus respectivos sócios.
 
 # Pré-requisitos 
 
@@ -16,7 +16,6 @@ O requerido projeto trata-se de um site feito em flask utilizando o Elasticsearc
 
 ## O desafio proposto se divide em duas etapas:
 ### 1.º Etapa 
- 
 - Utilizar as bases governamentais da receita federal que estão disponíveis neste [link](https://www.gov.br/receitafederal/pt-br/assuntos/orientacao-tributaria/cadastros/consultas/dados-publicos-cnpj) que consiste em baixar as bases “Dados Abertos CNPJ EMPRESA”, “Dados Abertos CNPJ ESTABELECIMENTOS” e “Dados Abertos CNPJ SÓCIOS”, existem arquivos complementares que podem ser utilizados para colocar as legendas e esse outro [link](https://www.gov.br/receitafederal/pt-br/assuntos/orientacao-tributaria/cadastros/consultas/arquivos/leiaute-dos-arquivos.pdf) é a legenda de campos de cada arquivos.  
  
 - Para efetuar o processamento a ideia é utilizar python puro e suas ferramentas nativas para processar com exceção do PyMongo que deverá ser utilizado como Banco de Processamento e Data Warehouse. Esse processamento precisa estar disponível em seu MongoDB e no seu ElasticSearch. 
@@ -24,7 +23,6 @@ O requerido projeto trata-se de um site feito em flask utilizando o Elasticsearc
 - Quantidade de CNPJs que precisam conter em sua base de dados que foram extraídos e processados é de 100.000 Registros. 
  
 ### 2.º Etapa 
- 
 - O Segundo desafio consiste em criar uma aplicação simples em Python e Flask para o cliente efetuar o login e consultar esses dados pelos seguintes filtros, “CNPJ”, “Razão Social”, “Endereços” e “Telefones”. 
  
 - Como base de dados deverá ser utilizado o MongoDB para guardar os dados de login e cadastro e juntamente um registro de pesquisas feitas no sistema e os dados destas pesquisas devem vir do ElasticSearch. 
