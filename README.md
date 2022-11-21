@@ -10,14 +10,14 @@ O requerido projeto trata-se de um site feito em flask utilizando o Elasticsearc
 - [Flask](https://flask.palletsprojects.com/en/2.2.x/) (microframework web escrito em Python);
 - [MongoDB](https://www.mongodb.com/docs/) (programa de banco de dados NoSQL);
 - [PyMongo](https://pymongo.readthedocs.io/en/stable/) (módulo Python que pode ser usado para interagir entre o banco de dados mongo e os aplicativos Python);
-- [ElasticSearch](https://www.elastic.co/guide/index.html) (mecanismo de pesquisa).
+- [ElasticSearch](https://www.elastic.co/guide/index.html) (mecanismo de pesquisa);
 
 ## Apresentação
 
 ## O desafio proposto se divide em duas etapas:
 ### 1.º Etapa 
  
-- Utilizar as bases governamentais da receita federal que estão disponíveis neste [link](https://www.gov.br/receitafederal/pt-br/assuntos/orientacao-tributaria/cadastros/consultas/dados-publicos-cnpj) que consiste em baixar as bases “Dados Abertos CNPJ EMPRESA”, “Dados Abertos CNPJ ESTABELECIMENTOS” e “Dados Abertos CNPJ SÓCIOS”, existem arquivos complementares que podem ser utilizados para colocar as legendas e esse outro [link](https://www.gov.br/receitafederal/pt-br/assuntos/orientacao-tributaria/cadastros/consultas/arquivos/leiaute-dos-arquivos.pdf) é a legenda de campos de cada arquivos  
+- Utilizar as bases governamentais da receita federal que estão disponíveis neste [link](https://www.gov.br/receitafederal/pt-br/assuntos/orientacao-tributaria/cadastros/consultas/dados-publicos-cnpj) que consiste em baixar as bases “Dados Abertos CNPJ EMPRESA”, “Dados Abertos CNPJ ESTABELECIMENTOS” e “Dados Abertos CNPJ SÓCIOS”, existem arquivos complementares que podem ser utilizados para colocar as legendas e esse outro [link](https://www.gov.br/receitafederal/pt-br/assuntos/orientacao-tributaria/cadastros/consultas/arquivos/leiaute-dos-arquivos.pdf) é a legenda de campos de cada arquivos.  
  
 - Para efetuar o processamento a ideia é utilizar python puro e suas ferramentas nativas para processar com exceção do PyMongo que deverá ser utilizado como Banco de Processamento e Data Warehouse. Esse processamento precisa estar disponível em seu MongoDB e no seu ElasticSearch. 
  
@@ -109,7 +109,7 @@ Aqui são apresentadas possíveis melhorias que ainda não foram implementadas n
 - Aplicar conceitos SOLID na apliação;
 - Reestruturar a aplicação para que a mesma seja executada via comando no terminal;
 - Melhorar a didática e apresentação das informações do Readme adicionando, por exemplo, material não textual;
-- Retificar estrutura para exercer vigência e conformidade com a arquitetura dinsponível no tutorial do [flask](https://flask.palletsprojects.com/en/2.2.x/tutorial/)  
+- Retificar estrutura para exercer vigência e conformidade com a arquitetura dinsponível no tutorial do [flask](https://flask.palletsprojects.com/en/2.2.x/tutorial/);  
 
 ## Referências Utilizadas
 
