@@ -92,9 +92,23 @@ O requerido projeto trata-se de um site feito em flask que utiliza Elasticsearch
   - Acesse http://127.0.0.1:5000
   
 ### Com docker: (EM CONSTRUÇÃO)
+1. **Clonar o repositório**
+  
+  - Use o comando:
+  ```bash
+  git clone git@github.com:Italo9/teste-target-data.git
+  ```
+  - Entre na pasta do repositório que você acabou de clonar:
+   ```bash
+   cd teste-target-data
+   ```
+ 2. **Baixar os três arquivos .csv e colocá-los no caminho `target/extrair_dados`** [baixar aqui](https://drive.google.com/drive/folders/1gNR9gBZD91umXB1RPJfs9i7VurAJcYwU?usp=share_link)
+
+ 3. **Subir o container**
   ```bash
   docker-compose up -d 
    ``` 
+ - Acesse http://127.0.0.1:5000
  
 ## Melhorias Futuras
 
