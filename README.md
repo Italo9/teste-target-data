@@ -43,7 +43,7 @@ O requerido projeto trata-se de um site feito em flask que utiliza Elasticsearch
   
   - Use o comando:
   ```bash
-  git clone git@github.com:Italo9/teste-target-data.git
+  git clone https://github.com/Italo9/teste-target-data.git
   ```
   - Entre na pasta do repositório que você acabou de clonar:
    ```bash
@@ -96,7 +96,7 @@ O requerido projeto trata-se de um site feito em flask que utiliza Elasticsearch
   
   - Use o comando:
   ```bash
-  git clone git@github.com:Italo9/teste-target-data.git
+  git clone https://github.com/Italo9/teste-target-data.git
   ```
   - Entre na pasta do repositório que você acabou de clonar:
    ```bash
