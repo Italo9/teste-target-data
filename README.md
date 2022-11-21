@@ -48,9 +48,9 @@ O requerido projeto trata-se de um site feito em flask utilizando o Elasticsearc
   git clone git@github.com:Italo9/teste-target-data.git
   ```
   - Entre na pasta do repositório que você acabou de clonar:
-    ```bash
-    cd teste-target-data
-    ```
+   ```bash
+   cd teste-target-data
+   ```
  2. **Baixar os três arquivos .csv e colocá-los no caminho `target/extrair_dados`** [baixar aqui](https://drive.google.com/drive/folders/1gNR9gBZD91umXB1RPJfs9i7VurAJcYwU?usp=share_link)
 
  3. **Criar o ambiente virtual**
