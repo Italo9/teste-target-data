@@ -1,15 +1,18 @@
 import os
 from pymongo import MongoClient
+from decouple import config
 from elasticsearch import Elasticsearch
 
+DB_HOST = config("DB_HOST", default="localhost")
+DB_PORT = config("DB_PORT", default="27017")
 
-MONGO_URL = os.environ.get("MONGO_URI")
-SECRET_KEY = os.environ.get("7499Reis")
+# MONGO_URL = os.environ.get("MONGO_URI")
+# SECRET_KEY = os.environ.get("SECRET_KEY")
 ELASTIC_CLOUD_ID = os.environ.get("ELASTIC_CLOUD_ID")
 ELASTIC_USERNAME = os.environ.get("ELASTIC_USERNAME")
 ELASTIC_PASSWORD = os.environ.get("ELASTIC_PASSWORD")
 
-client = MongoClient(MONGO_URL)
+client = MongoClient(host=DB_HOST, port=int(DB_PORT))
 db = client.Teste_Python
 
 es = Elasticsearch(

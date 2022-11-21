@@ -1,11 +1,15 @@
-import os
+# import os
 
 from elasticsearch import Elasticsearch
 from pymongo import MongoClient
+from decouple import config
 
-MONGO_URL = os.environ.get("mongodb://localhost:27017")
+DB_HOST = config("DB_HOST", default="localhost")
+DB_PORT = config("DB_PORT", default="27017")
 
-client = MongoClient(MONGO_URL)
+# MONGO_URL = os.environ.get("MONGO_URI")
+
+client = MongoClient(host=DB_HOST, port=int(DB_PORT))
 db = client.Teste_Python
 
 es = Elasticsearch(

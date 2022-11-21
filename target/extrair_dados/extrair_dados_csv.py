@@ -1,9 +1,13 @@
+# import os
 from pymongo import MongoClient
+from decouple import config
 
+DB_HOST = config("DB_HOST", default="localhost")
+DB_PORT = config("DB_PORT", default="27017")
 
-client = MongoClient("mongodb://localhost:27017")
-print(client.list_database_names())
-
+# client = os.environ.get("MONGO_URI")
+# print(client.list_database_names())
+client = MongoClient(host=DB_HOST, port=int(DB_PORT))
 db = client.Teste_Python
 collection_empresas = db.Empresas
 collection_socios = db.Socios
