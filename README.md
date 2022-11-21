@@ -2,7 +2,7 @@
 
 # Projeto proposto como desafio técnico 
 
-O requerido projeto trata-se de um site feito em flask que utiliza Elasticsearch, como mecanismo de pesquisa (derivado da biblioteca Lucene), MongoDB como banco de dados não relacional e os dados abertos da receita federal. Concerne em uma modelagem organizada em tabelas que expões informaçoes de empresas, estabelecimento e seus respectivos sócios.
+O requerido projeto trata-se de um site feito em flask que utiliza Elasticsearch, como mecanismo de pesquisa (derivado da biblioteca Lucene), MongoDB como banco de dados não relacional e os dados abertos da receita federal. Concerne em uma modelagem organizada em tabelas que expõe informaçoes de empresas, estabelecimento e seus respectivos sócios.
 
 # Pré-requisitos 
 
